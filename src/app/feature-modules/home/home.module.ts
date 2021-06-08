@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DatatableRoutingModule } from './home-routing.module';
+import { HomeRoutingModule } from './home-routing.module';
 import { ShellComponent } from './shell/shell.component';
 import { ListingComponent } from './containers/listing/listing.component';
 import { HomeComponent } from './home.component';
@@ -20,7 +20,7 @@ import { homeReducer } from './data-source/store/home.reducer';
   declarations: [HomeComponent, ShellComponent, ListingComponent, DatatableComponent, FilterPipe],
   imports: [
     CommonModule,
-    DatatableRoutingModule,
+    HomeRoutingModule,
     DragDropModule,
     FormsModule,
     ReactiveFormsModule,
@@ -28,4 +28,4 @@ import { homeReducer } from './data-source/store/home.reducer';
     EffectsModule.forFeature([HomeEffects])
   ]
 })
-export class DatatableModule { }
+export class HomeModule { }

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'datatable',
-    loadChildren: async () => (await import('./feature-modules/home/home.module')).DatatableModule
+    loadChildren: async () => (await import('./feature-modules/home/home.module')).HomeModule
   },
   {
     path: '',
