@@ -1,0 +1,31 @@
+<div class="cu-container">
+  <table class="cu-table" rules="none">
+    <thead class="cu-table__header">
+      <tr class="cu-table__header-row" cdkDropList
+      cdkDropListLockAxis="x"
+        cdkDropListOrientation="horizontal"
+        [cdkDropListData]="columns"
+        (cdkDropListDropped)="dropCol($event)">
+          <th (mouseenter)="column.showSortIcon = true" (mouseleave)="column.showSortIcon = false" *ngFor="let column of columns" cdkDrag class="cu-table__header-cell">
+            <div class="cu-table__header-cell-wrapper">
+              <div class="cell-prop">
+                <span>{{column.displayValue}}</span>
+                <div *ngIf="column.prop === 'name'">
+                  <input [formControl]="filterByNameFC" class="cu-table__header-input" type="text" placeholder="Search...">
+                </div>
+              </div>
+              <span class="cell-sort" (click)="sortData(column)">
+                <span *ngIf="column.showSortIcon" class="sort-icon">{{column.isAscending ? '&#8595;' : '&#8593;'}}</span>
+              </span>
+            </div>
+          </th>
+      </tr>
+    </thead>
+    <tbody class="cu-table__body">
+          <tr class="cu-table__body-row" *ngFor="let row of data | filter:filterByNameFC.value:'name'">
+            <td class="cu-table__body-cell" *ngFor="let cell of columns">{{ row[cell.prop] }}</td>
+          </tr>
+    </tbody>
+  </table>
+
+</div>

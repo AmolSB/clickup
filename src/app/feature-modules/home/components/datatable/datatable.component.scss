@@ -1,0 +1,80 @@
+.cu-container {
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 4px;
+  margin: auto;
+  width: 70vw;
+}
+
+.cu-table {
+  width: 100%;
+
+  &__haeder {
+  }
+
+  &__header-row {
+    background-color: #f4f4f4;
+  }
+
+  &__header-cell {
+    color: #37486e;
+    font-weight: 600;
+    padding: 1rem .75rem;
+    font-size: 14px;
+    text-align: start;
+    border-right: 1px solid #eee;
+    cursor: grabbing;
+  }
+
+  &__header-cell-wrapper {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  &__header-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    margin-top: 8px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__body {
+
+  }
+
+  &__body-row {
+
+  }
+
+  &__body-cell {
+    font-size: 12px;
+    color: #597e8d;
+    padding: 0.75rem;
+  }
+
+}
+
+.cell-sort {
+  height: 20px; width: 20px; font-size: 18px;
+  // position: relative;
+  // top: -3px;
+  cursor: pointer;
+}
+
+.cell-prop {
+
+}
+
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
